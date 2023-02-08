@@ -1,0 +1,25 @@
+# docker-python-poetry-gcc
+
+[![docker version semver](https://img.shields.io/docker/v/sinlov/docker-python-poetry-gcc?sort=semver)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc)
+[![docker image size](https://img.shields.io/docker/image-size/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc)
+[![docker pulls](https://img.shields.io/docker/pulls/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
+
+- docker hub see https://hub.docker.com/r/sinlov/docker-python-poetry-gcc
+- this is fast way to run https://verdaccio.org/ and auth by https://gitea.io/
+
+## for
+
+- [https://hub.docker.com/r/fnndsc/python-poetry](https://hub.docker.com/r/fnndsc/python-poetry) add make and gcc for build
+
+## source repo
+
+[https://github.com/sinlov/docker-python-poetry-gcc](https://github.com/sinlov/docker-python-poetry-gcc)
+
+## fast use
+
+```sh
+docker run -d --rm \
+  --name demo-docker-python-poetry-gcc \
+  -p 4873:4873 \
+  sinlov/docker-python-poetry-gcc:latest --help
+```
