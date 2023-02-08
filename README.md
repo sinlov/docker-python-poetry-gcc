@@ -18,8 +18,9 @@
 ## fast use
 
 ```sh
-docker run -d --rm \
-  --name demo-docker-python-poetry-gcc \
-  -p 4873:4873 \
-  sinlov/docker-python-poetry-gcc:latest --help
+docker run --rm \
+  --entrypoint poetry \
+  --name "test-docker-python-poetry-gcc" \
+  sinlov/docker-python-poetry-gcc:latest \
+  --help
 ```
