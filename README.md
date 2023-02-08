@@ -5,7 +5,6 @@
 [![docker pulls](https://img.shields.io/docker/pulls/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
 
 - docker hub see https://hub.docker.com/r/sinlov/docker-python-poetry-gcc
-- this is fast way to run https://verdaccio.org/ and auth by https://gitea.io/
 
 ## for
 
