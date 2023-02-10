@@ -18,6 +18,7 @@ INFO_TEST_BUILD_DOCKER_FILE=Dockerfile.s6
 ROOT_BUILD_OS := alpine
 
 include z-MakefileUtils/MakeImage.mk
+include z-MakefileUtils/MakeImageSlim.mk
 
 all: dockerTestRestartLatest
 
