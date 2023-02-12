@@ -11,7 +11,7 @@
 
 - [https://hub.docker.com/r/fnndsc/python-poetry](https://hub.docker.com/r/fnndsc/python-poetry) add make and gcc for build
 
-[![](https://img.shields.io/docker/v/fnndsc/python-poetry?label=python-poetry&style=social)](https://hub.docker.com/r/fnndsc/python-poetry/tags)
+- [![](https://img.shields.io/docker/v/fnndsc/python-poetry?label=python-poetry&style=social)](https://hub.docker.com/r/fnndsc/python-poetry/tags) latest semver version
 
 ## source repo
 
