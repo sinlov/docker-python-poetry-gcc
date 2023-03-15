@@ -110,6 +110,6 @@ jobs:
         echo IMAGE_ID=$IMAGE_ID
         echo VERSION=$VERSION
         # build and push
-        docker buildx build -t $IMAGE_ID:$VERSION --platform=linux/ppc64le,linux/arm64,linux/amd64 . --push
+        docker buildx build -t $IMAGE_ID:$VERSION --platform=linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7 . --push
 
 ```
