@@ -13,7 +13,7 @@ ROOT_PARENT_SWITCH_TAG := 1.5.1
 INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =fnndsc/python-poetry
 INFO_BUILD_DOCKER_FILE =Dockerfile
 INFO_TEST_BUILD_DOCKER_FILE =build.dockerfile
-INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS = bash -c "poetry --version && python -V && pip -V && echo micromamba-version && micromamba --version && gcc -v && make --version"
+INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS = bash -c "poetry --version && python -V && pip -V && echo micromamba-version && micromamba --version && gcc -v && make --version && id"
 # MakeDocker.mk settings end
 
 include z-MakefileUtils/MakeImage.mk
