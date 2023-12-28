@@ -1,6 +1,6 @@
 {
   "name": "docker-python-poetry-gcc",
-  "version": "1.4.1",
+  "version": "1.5.1",
   "description": "for fnndsc/python-poetry append make and gcc",
   "main": "index.js",
   "directories": {
