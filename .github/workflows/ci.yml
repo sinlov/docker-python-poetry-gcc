@@ -42,7 +42,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-image-latest.yml
-    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || ( github.base_ref == 'main' && github.event.pull_request.merged == true ) }}
+    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || ( github.base_ref == 'main') }}
     secrets: inherit
     with:
       docker_hub_user: 'sinlov'
