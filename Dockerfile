@@ -7,10 +7,15 @@
 # maintainer="https://github.com/sinlov/docker-python-poetry-gcc"
 
 # https://hub.docker.com/r/fnndsc/python-poetry/tags?page=1&ordering=last_updated
-FROM fnndsc/python-poetry:1.4.1
+FROM fnndsc/python-poetry:1.5.1
 
-#USER root
+USER root:root
 
-RUN apt update && \
-  apt install -y make gcc && \
-  apt clean
+RUN apt-get update \
+  && apt-get install -y make gcc \
+  && apt-get autoclean \
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/*
+
+USER mambauser:mambauser

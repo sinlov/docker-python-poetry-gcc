@@ -8,12 +8,12 @@ ROOT_NAME=docker-python-poetry-gcc
 
 # MakeDocker.mk settings start
 ROOT_OWNER=sinlov
-ROOT_PARENT_SWITCH_TAG := 1.4.1
+ROOT_PARENT_SWITCH_TAG := 1.5.1
 # for image local build
-INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =alpine
+INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =fnndsc/python-poetry
 INFO_BUILD_DOCKER_FILE =Dockerfile
 INFO_TEST_BUILD_DOCKER_FILE =build.dockerfile
-INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS = sh -c "poetry --version && python -V && pip -V && conda --version"
+INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS = bash -c "poetry --version && python -V && pip -V && echo micromamba-version && micromamba --version && gcc -v && make --version"
 # MakeDocker.mk settings end
 
 include z-MakefileUtils/MakeImage.mk

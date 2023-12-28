@@ -15,11 +15,13 @@
 
 ## python version
 
-| poetry version | image version | python version | conda version |
-| -------------- | ------------- | -------------- | ------------- |
-| 1.4.1          | 1.4.1         | 3.11.2         | 23.3.1        |
-| 1.3.1          | 1.3.1-alpine  | 3.11.0         | 22.11.1       |
+| image version | poetry version | python version | micromamba version | conda version |
+| ------------- | -------------- | -------------- | ------------------ | ------------- |
+| 1.5.1         | 1.5.1          | 3.11.4         | 1.4.8              |               |
+| 1.4.1         | 1.4.1          | 3.11.2         |                    | 23.3.1        |
+| 1.3.1-alpine  | 1.3.1          | 3.11.0         |                    | 22.11.1       |
 
+- 1.5.1 use [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#docker-images)
 
 ## source repo
 
