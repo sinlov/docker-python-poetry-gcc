@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.5.1](https://github.com/sinlov/docker-python-poetry-gcc/compare/1.4.1...v1.5.1) (2023-12-29)
+
+### ✨ Features
+
+* use fnndsc/python-poetry:1.5.1 to build ([ce0e81f4](https://github.com/sinlov/docker-python-poetry-gcc/commit/ce0e81f4da841fac4d2de014f8c42f820b0c5408)), feat [#1](https://github.com/sinlov/docker-python-poetry-gcc/issues/1)
+
+### 👷‍ Build System
+
+* change docker-image-latest by github.base_ref as main ([d6312c02](https://github.com/sinlov/docker-python-poetry-gcc/commit/d6312c02d2927455ee6b4e8ed2515b94715b821e))
+
+* remove .github/dependabot.yml and change pull_request can check docker-image-latest ([2345802b](https://github.com/sinlov/docker-python-poetry-gcc/commit/2345802b37d7d7b5f4986d332eed610550d969d2))
+
 ## [1.4.1](https://github.com/sinlov/docker-python-poetry-gcc/compare/1.3.1...v1.4.1) (2023-12-29)
 
 ### ✨ Features
