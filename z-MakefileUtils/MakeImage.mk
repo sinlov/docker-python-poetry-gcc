@@ -7,22 +7,25 @@
 # INFO_BUILD_DOCKER_FILE for build docker image default Dockerfile
 # INFO_TEST_BUILD_DOCKER_FILE for local build docker image file
 # INFO_TEST_BUILD_DOCKER_PARENT_IMAGE for local build
+# INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS is args at build
 # ROOT_PARENT_SWITCH_TAG is change parent image tag
 
-ENV_INFO_BUILD_DOCKER_TAG=${ENV_DIST_VERSION}
-ENV_INFO_DOCKER_REPOSITORY=${ROOT_NAME}
-ENV_INFO_DOCKER_OWNER=${ROOT_OWNER}
+ENV_INFO_BUILD_DOCKER_TAG =${ENV_DIST_VERSION}
+ENV_INFO_DOCKER_REPOSITORY =${ROOT_NAME}
+ENV_INFO_DOCKER_OWNER =${ROOT_OWNER}
 # if set ENV_INFO_PRIVATE_DOCKER_REGISTRY= will push to hub.docker.com
 # private docker registry use harbor must create project name as ${ENV_INFO_DOCKER_OWNER}
 #ENV_INFO_PRIVATE_DOCKER_REGISTRY=harbor.xxx.com/
-ENV_INFO_PRIVATE_DOCKER_REGISTRY=
-ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE?=${ENV_INFO_DOCKER_OWNER}/${ENV_INFO_DOCKER_REPOSITORY}
-ENV_INFO_BUILD_DOCKER_FILE=${INFO_BUILD_DOCKER_FILE}
+ENV_INFO_PRIVATE_DOCKER_REGISTRY =
+ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE ?=${ENV_INFO_DOCKER_OWNER}/${ENV_INFO_DOCKER_REPOSITORY}
+ENV_INFO_BUILD_DOCKER_FILE =${INFO_BUILD_DOCKER_FILE}
 
-ENV_INFO_TEST_BUILD_DOCKER_FILE=${INFO_TEST_BUILD_DOCKER_FILE}
-ENV_INFO_TEST_BUILD_DOCKER_PARENT_IMAGE=${INFO_TEST_BUILD_DOCKER_PARENT_IMAGE}:${ROOT_PARENT_SWITCH_TAG}
-ENV_INFO_TEST_BUILD_DOCKER_PARENT_CONTAINER=test-parent-${ENV_INFO_DOCKER_REPOSITORY}
-ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME=test-${ENV_INFO_DOCKER_REPOSITORY}
+ENV_INFO_TEST_BUILD_DOCKER_FILE =${INFO_TEST_BUILD_DOCKER_FILE}
+ENV_INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =${INFO_TEST_BUILD_DOCKER_PARENT_IMAGE}:${ROOT_PARENT_SWITCH_TAG}
+ENV_INFO_TEST_BUILD_DOCKER_PARENT_CONTAINER =test-parent-${ENV_INFO_DOCKER_REPOSITORY}
+ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME =test-${ENV_INFO_DOCKER_REPOSITORY}
+ENV_INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS =${INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS}
+ENV_INFO_TEST_BUILD_DOCKER_CONTAINER_ENTRYPOINT =/bin/sh
 
 dockerEnv:
 	@echo "== docker env print start"
@@ -77,9 +80,10 @@ dockerTestRunLatest:
 	$(warning you can change test docker run args at here for dev)
 	-docker run --rm --name ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME} \
 	-e RUN_MODE=dev \
-	${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG}
+	${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG} \
+	${ENV_INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS}
 	$(info for inner check can use like this)
-	$(info docker run -it -d --entrypoint /bin/sh --name ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME} ${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG})
+	$(info docker run --rm -it --entrypoint ${ENV_INFO_TEST_BUILD_DOCKER_CONTAINER_ENTRYPOINT} --name ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME} ${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG})
 	-docker inspect --format='{{ .State.Status}}' ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME}
 
 dockerTestLogLatest:
@@ -118,14 +122,14 @@ dockerPushBuild: dockerBeforePush
 	@echo "=> push ${ENV_INFO_PRIVATE_DOCKER_REGISTRY}${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG}"
 
 helpDocker:
-	@echo "=== this make file can include MakeDocker.mk then use"
+	@echo "=== this make file can include MakeImage.mk then use"
 	@echo "- must has file: [ ${ENV_INFO_BUILD_DOCKER_FILE} ${ENV_INFO_TEST_BUILD_DOCKER_FILE}" ]
-	@echo "- then change tag as:                       INFO_BUILD_DOCKER_TAG"
-	@echo "- then change repository as:                INFO_REPOSITORY"
-	@echo "- then change owner as:                     INFO_OWNER"
-	@echo "- then change private docker repository as: INFO_PRIVATE_DOCKER_REGISTRY"
-	@echo "- then change build parent image as:        INFO_TEST_BUILD_PARENT_IMAGE"
-	@echo "- then change build image as:               INFO_BUILD_FROM_IMAGE"
+	@echo "- then change tag as:                       ENV_DIST_VERSION"
+	@echo "- then change repository as:                ROOT_NAME"
+	@echo "- then change owner as:                     ROOT_OWNER"
+	@echo "- then change private docker repository as: ENV_INFO_PRIVATE_DOCKER_REGISTRY"
+	@echo "- then change build parent image as:        INFO_TEST_BUILD_DOCKER_PARENT_IMAGE"
+	@echo "- then change build parent image tag as:    ROOT_PARENT_SWITCH_TAG"
 	@echo "- check by task"
 	@echo "$$ make dockerEnv"
 	@echo ""

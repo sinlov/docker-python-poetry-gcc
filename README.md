@@ -13,6 +13,14 @@
 
 - [![](https://img.shields.io/docker/v/fnndsc/python-poetry?label=python-poetry&style=social)](https://hub.docker.com/r/fnndsc/python-poetry/tags) latest semver version
 
+## python version
+
+| poetry version | image version | python version | conda version |
+| -------------- | ------------- | -------------- | ------------- |
+| 1.4.1          | 1.4.1         | 3.11.2         | 23.3.1        |
+| 1.3.1          | 1.3.1-alpine  | 3.11.0         | 22.11.1       |
+
+
 ## source repo
 
 [https://github.com/sinlov/docker-python-poetry-gcc](https://github.com/sinlov/docker-python-poetry-gcc)

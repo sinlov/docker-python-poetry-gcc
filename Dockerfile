@@ -6,8 +6,8 @@
 
 # maintainer="https://github.com/sinlov/docker-python-poetry-gcc"
 
-# https://hub.docker.com/r/verdaccio/verdaccio/tags?page=1&ordering=last_updated
-FROM fnndsc/python-poetry:1.3.1
+# https://hub.docker.com/r/fnndsc/python-poetry/tags?page=1&ordering=last_updated
+FROM fnndsc/python-poetry:1.4.1
 
 #USER root
 
