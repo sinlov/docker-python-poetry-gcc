@@ -31,8 +31,9 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
 
 ### env info
 
-| image version | poetry version | python version | micromamba version | conda version |
+| image version | poetry version | python version | [micromamba](https://mamba.readthedocs.io/en/latest/index.html) version | [conda](https://docs.conda.io/en/latest/) version |
 | ------------- | -------------- | -------------- | ------------------ | ------------- |
+| 1.7.1         | 1.7.1          | 3.12.1         | 1.4.9              |               |
 | 1.5.1         | 1.5.1          | 3.11.4         | 1.4.8              |               |
 | 1.4.1         | 1.4.1          | 3.11.2         |                    | 23.3.1        |
 | 1.3.1-alpine  | 1.3.1          | 3.11.0         |                    | 22.11.1       |

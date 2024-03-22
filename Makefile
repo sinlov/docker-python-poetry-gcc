@@ -8,7 +8,7 @@ ROOT_NAME=docker-python-poetry-gcc
 
 # MakeDocker.mk settings start
 ROOT_OWNER=sinlov
-ROOT_PARENT_SWITCH_TAG := 1.5.1
+ROOT_PARENT_SWITCH_TAG := 1.7.1
 # for image local build
 INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =fnndsc/python-poetry
 INFO_BUILD_DOCKER_FILE =Dockerfile

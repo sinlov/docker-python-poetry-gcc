@@ -7,7 +7,7 @@
 # maintainer="https://github.com/sinlov/docker-python-poetry-gcc"
 
 # https://hub.docker.com/r/fnndsc/python-poetry/tags?page=1&ordering=last_updated
-FROM fnndsc/python-poetry:1.5.1
+FROM fnndsc/python-poetry:1.7.1
 
 USER root:root
 
