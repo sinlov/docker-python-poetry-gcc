@@ -1,7 +1,5 @@
 
-[![docker hub version semver](https://img.shields.io/docker/v/sinlov/docker-python-poetry-gcc?sort=semver)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
-[![docker hub image size](https://img.shields.io/docker/image-size/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc)
-[![docker hub image pulls](https://img.shields.io/docker/pulls/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
+[![ci](https://github.com/sinlov/docker-python-poetry-gcc/actions/workflows/ci.yml/badge.svg)](https://github.com/sinlov/docker-python-poetry-gcc/actions/workflows/ci.yml)
 
 [![GitHub license](https://img.shields.io/github/license/sinlov/docker-python-poetry-gcc)](https://github.com/sinlov/docker-python-poetry-gcc)
 [![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/sinlov/docker-python-poetry-gcc)](https://github.com/sinlov/docker-python-poetry-gcc/tags)
@@ -16,18 +14,23 @@ We welcome community contributions to this project.
 
 Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for more information on how to get started.
 
-请阅读有关 [贡献者指南](.github/CONTRIBUTING_DOC/zh-CN/CONTRIBUTING.md) 以获取更多如何入门的信息
+# docker usage
 
+[![docker hub version semver](https://img.shields.io/docker/v/sinlov/docker-python-poetry-gcc?sort=semver)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
+[![docker hub image size](https://img.shields.io/docker/image-size/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc)
+[![docker hub image pulls](https://img.shields.io/docker/pulls/sinlov/docker-python-poetry-gcc)](https://hub.docker.com/r/sinlov/docker-python-poetry-gcc/tags?page=1&ordering=last_updated)
 
-# docker-python-poetry-gcc
+## docker-python-poetry-gcc
 
 - docker hub see https://hub.docker.com/r/sinlov/docker-python-poetry-gcc
 
 ## for
 
-- [https://hub.docker.com/r/fnndsc/python-poetry](https://hub.docker.com/r/fnndsc/python-poetry) add make and gcc for build
-
+- from [https://hub.docker.com/r/fnndsc/python-poetry](https://hub.docker.com/r/fnndsc/python-poetry)
 - [![](https://img.shields.io/docker/v/fnndsc/python-poetry?label=python-poetry&style=social)](https://hub.docker.com/r/fnndsc/python-poetry/tags) latest semver version
+- add kit
+  - make
+  - gcc
 
 ### env info
 
@@ -40,10 +43,6 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
 
 - 1.5.1 use [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#docker-images)
   - notice: docker user change to `uid=1000(mambauser) gid=1000(mambauser) groups=1000(mambauser)`
-
-## source repo
-
-[https://github.com/sinlov/docker-python-poetry-gcc](https://github.com/sinlov/docker-python-poetry-gcc)
 
 ## fast use
 
